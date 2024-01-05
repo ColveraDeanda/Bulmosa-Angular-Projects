@@ -1,0 +1,23 @@
+<h4>Listado</h4>
+<ul class="list-group">
+  <!-- Angular expone ciertos objetos que se pueden declarar en el propio ngFor. Por ejemplo:  -->
+  <!-- ngClass: Enlaza clases de css basado en un objeto o expresión. -->
+  <li *ngFor="let character of characterList;
+              index as i;
+              first as first;
+              last as last;" class="list-group-item d-flex justify-content-between align-items-center"
+              [ngClass]="{
+                'list-group-item-dark': first,
+                'list-group-item-primary': last,
+              }">
+
+    <div>
+      {{i + 1}}. Name: {{character.name}} - power: {{character.power}}
+    </div>
+
+    <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
+    <!-- <span *ngIf="first"> <strong>First Element.</strong></span>
+    <span *ngIf="last"> <strong>Last Element.</strong></span>` -->
+  </li>
+
+</ul>

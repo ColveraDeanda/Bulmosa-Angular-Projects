@@ -1,0 +1,21 @@
+<h4>Agregar Personaje</h4>
+
+
+<form class="row" (ngSubmit)="emitCharacter()">
+  <!-- Cada vez que se use el two way data binding [(ngModel)], es necesario usar el atributo name -->
+  <input
+    type="text"
+    [(ngModel)]="character.name"
+    name="name"
+    class="form-control mb-2"
+    placeholder="Nombre">
+
+  <input
+    type="number"
+    [(ngModel)]="character.power"
+    name="power"
+    class="form-control mb-2"
+    placeholder="Poder">
+
+  <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
